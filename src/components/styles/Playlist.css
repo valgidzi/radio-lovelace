@@ -1,0 +1,10 @@
+.playlist {
+  margin: 0 1em;
+}
+
+.playlist--track-list {
+  min-height: 400;
+  border: 1px solid black;
+  list-style-type: none;
+  padding-left: 0;
+}
