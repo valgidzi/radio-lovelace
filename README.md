@@ -46,7 +46,7 @@ We have already implemented some parts of this application:
 Before you start writing code, read through what's already here and make sure you understand it by answering the following questions:
 
 - How do the components relate to each other? Draw a diagram.
-- How does data flow through the application?
+- How does data get from `App.js` to `Track.js`?
 - There are two new pieces of syntax in this application: the "spread operator" in `Playlist.js`, and "object destructuring" in `Track.js`. What do these do?
 - `Track.js` relies on a prop called `favorite` which is not included in the JSON data. What value does this property end up taking?
 
