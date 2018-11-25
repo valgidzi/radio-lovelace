@@ -10,22 +10,74 @@ This project is designed to exercise the following skills:
 
 ## Introduction
 
-A local radio station, Radio Lovelace, has asked your company to build an app to manage playlists. 
+A local radio station, Radio Lovelace, has asked your company to build an app to manage playlists. The app should automatically load in a list of songs or "tracks", and organize them into two groups, the "morning playlist" and the "evening playlist". Tracks should not be repeated between the two playlists.
 
-### What's Already Here?
+While using the application, the user should be able to:
+- Mark a track as a "favorite"
+- Send a track to the top of a playlist
+- Switch a track between playlists (it should be sent to the top of the new playlist)
 
-- Functional stateless components
-- CSS / BEM
+We have [our own implementation](https://adagold.github.io/radio-lovelace/) of this application deployed to GitHub Pages for you to see what this functionality looks like.
+
+### Setup
+
+1. Fork and clone this repository
+1. run `npm install` to install dependencies
+1. run `npm start` to start the dev server
 
 ## Requirements
 
+Each of the waves includes a number of questions. Though you should write your own code, feel free to collaborate with other students as you work on these questions.
+
 ### Wave 0: Reading
+
+We have already implemented some parts of this application:
+
+- Code to load JSON track data in `App.js`
+- 3 functional stateless components: `Track`, `Playlist` and `RadioSet`
+- CSS for all components. You shouldn't need to write any CSS for this project.
+  - All of our CSS uses [BEM naming](http://getbem.com/naming/)
+
+Before you start writing code, read through what's already here and make sure you understand it by answering the following questions:
+
+- How do the components relate to each other? Draw a diagram.
+- How does data flow through the application?
+- There are two new pieces of syntax in this application: the "spread operator" in `Playlist.js`, and "object destructuring" in `Track.js`. What do these do?
+- `Track.js` relies on a prop called `favorite` which is not included in the JSON data. What value does this property end up taking?
 
 ### Wave 1: Marking Favorites
 
+When the user clicks the star icon on each track, the track should be marked as a favorite. Its star should be filled in.
+
+**Questions:**
+- How will you track whether or not a track is a favorite? Where will this state live?
+- What event should you listen for?
+  - Hint: it's not `onClick`. Check the warning in the console.
+- Draw a diagram of the flow of rendering and callbacks in your app so far, similar to the one we drew in class.
+
 ### Wave 2: Send to Top
 
+When the user clicks the 🔝 button on a track, that track should move to the top of its current playlist.
+
+A "favorite" track that is sent to the top should continue to be a favorite.
+
+**Questions:**
+- How will you keep track of the order of songs? Where will this state live?
+- Do you need to lift any existing state? What will happen to the code to manage this state?
+- Is the component that maintains the state the same as the component where the event occurs? If not, how will you communicate between components?
+- Draw a diagram of the flow of rendering and callbacks in your app so far, similar to the one we drew in class.
+
 ### Wave 3: Switch Lists
+
+When the user clicks the ↔ button on a track, that track should move to the top of the other playlist.
+
+A "favorite" track that switches lists should continue to be a favorite.
+
+**Questions:** (same as for wave 2)
+- How will you keep track of the order of songs? Where will this state live?
+- Do you need to lift any existing state? What will happen to the code to manage this state?
+- Is the component that maintains the state the same as the component where the event occurs? If not, how will you communicate between components?
+- Draw a diagram of the flow of rendering and callbacks in your app so far, similar to the one we drew in class.
 
 ### Optional Enhancements
 
