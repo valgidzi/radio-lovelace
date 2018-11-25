@@ -56,6 +56,7 @@ When the user clicks the star icon on each track, the track should be marked as 
 
 **Questions:**
 - How will you track whether or not a track is a favorite? Where will this state live?
+- Will you need to switch a functional component to a classical component?
 - What event should you listen for?
   - Hint: it's not `onClick`. Check the warning in the console.
 - Draw a diagram of the flow of rendering and callbacks in your app so far, similar to the one we drew in class.
@@ -68,7 +69,9 @@ A "favorite" track that is sent to the top should continue to be a favorite.
 
 **Questions:**
 - How will you keep track of the order of songs? Where will this state live?
+- Will you need to switch a functional component to a classical component?
 - Do you need to lift any existing state? What will happen to the code to manage this state?
+- If you do lift state, can you convert the child component back to a functional component?
 - Is the component that maintains the state the same as the component where the event occurs? If not, how will you communicate between components?
 - Draw a diagram of the flow of rendering and callbacks in your app so far, similar to the one we drew in class.
 
@@ -79,8 +82,10 @@ When the user clicks the ↔ button on a track, that track should move to the to
 A "favorite" track that switches lists should continue to be a favorite.
 
 **Questions:** (same as for wave 2)
-- How will you keep track of the order of songs? Where will this state live?
+- How will you keep track of which song belongs in which playlist? Where will this state live?
+- Will you need to switch a functional component to a classical component?
 - Do you need to lift any existing state? What will happen to the code to manage this state?
+- If you do lift state, can you convert the child component back to a functional component?
 - Is the component that maintains the state the same as the component where the event occurs? If not, how will you communicate between components?
 - Draw a diagram of the flow of rendering and callbacks in your app so far, similar to the one we drew in class.
 
