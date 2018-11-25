@@ -1,5 +1,10 @@
 # Radio Lovelace
 
+## At a Glance
+
+- Individual, [stage 1](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md#stage-1) project
+- To be completed in class, **DATE**. No pull request is required.
+
 ## Learning Goals
 
 This project is designed to exercise the following skills:
@@ -81,11 +86,9 @@ A "favorite" track that switches lists should continue to be a favorite.
 
 ### Optional Enhancements
 
-Don't even read this list until you've completed the core requirements and submitted a pull request.
+Don't even read this list until you've completed the core requirements.
 
 - Instead of splitting the list of tracks down the middle, write some code that splits the list in two so that the play times are as close as possible. What is the time complexity of your code? What is `n`?
 - Replace the "send to top" button with two buttons, "up" and "down", that move a track up or down one position in its playlist
 - Allow the user to add another playlist, and to move tracks right and left between playlists
 - Add a [managed form](https://reactjs.org/docs/forms.html) to allow the user to add their own track (we will formally cover managed forms next week)
-
-## What We're Looking For
