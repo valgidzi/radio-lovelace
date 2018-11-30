@@ -1,0 +1,58 @@
+.track {
+  display: grid;
+  grid-template: 1fr 1fr / 6rem 4rem auto 4rem 3rem;
+  grid-template-areas: "track--albumart track--title track--title track--title track--to-top" "track--albumart track--favorite track--artist track--playtime track--switch";
+  align-items: center;
+
+  height: 6rem;
+  overflow: hidden;
+  border-bottom: 1px solid darkslategrey;
+
+  background: linear-gradient(white 75%,lightgrey);
+}
+
+.track--albumart {
+  grid-area: track--albumart;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.track--title {
+  grid-area: track--title;
+  
+  margin-top: .5rem;
+  margin-bottom: 0;
+  margin-left: .25rem;
+}
+
+.track--favorite { grid-area: track--favorite; }
+.track--artist { grid-area: track--artist; }
+.track--playtime { grid-area: track--playtime; }
+.track--to-top { grid-area: track--to-top; }
+.track--switch { grid-area: track--switch; }
+
+.track--favorite, .track--artist, .track--playtime {
+  justify-self: center;
+  margin: .5rem 0;
+}
+
+.track--favorite {
+  visibility:hidden;
+  color: goldenrod;
+  font-size: 1rem;
+}
+.track--favorite:before {
+   content: "\2605";
+   position: absolute;
+   visibility:visible;
+}
+.track--favorite:checked:before {
+  content: "\2606";
+  position: absolute;
+}
+
+.track--control {
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+}
