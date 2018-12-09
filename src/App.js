@@ -5,8 +5,8 @@ import RadioSet from './components/RadioSet';
 
 import songData from './data/tracks.json';
 
-songData.forEach((song, i) => {
-  song.id = i;
+songData.forEach((song) => {
+  song.id = song.title + song.playtime;
 });
 
 class App extends Component {
