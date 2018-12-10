@@ -12,12 +12,9 @@ class Playlist extends React.Component {
   }
 
   moveTrackToTop = (trackId) => {
-    console.log(`Clicked in playlist: ${trackId}`)
-    console.log(this);
     let collection = this.state.tracks
     let clicked = collection.find(track => track.id === trackId)
     let index = collection.indexOf(clicked)
-    console.log(index);
     collection.splice(index, 1)
     collection.unshift(clicked)
     this.setState({tracks: collection});
@@ -45,14 +42,10 @@ class Playlist extends React.Component {
   }
 
 
-
-
   render() {
     const tracks = this.state.tracks;
-    console.log(tracks)
     const trackCount = tracks.length;
     const playtime = this.calculatePlayTime(tracks);
-    console.log(tracks)
     const trackElements = tracks.map((track) => {
       // We use "spread syntax" here to pass in all the properties of
       // the variable 'track' as props. Go look it up!

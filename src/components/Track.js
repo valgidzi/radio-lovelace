@@ -13,8 +13,6 @@ class Track extends React.Component {
   }
 
   onTrackTopClick = () => {
-    console.log(`Clicked song in Track: ${this.props.id}`)
-    console.log(`this is: ${this}`)
     this.props.moveTrackToTopCallback(this.props.id)
   }
 
