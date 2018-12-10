@@ -22,20 +22,7 @@ class Playlist extends React.Component {
   }
 
   switchPlaylist = (trackId, side) => {
-
-    console.log(`From Playlist id: ${trackId}`)
-    let collection = this.state.tracks
-    let clicked = collection.find(track => track.id === trackId)
-    console.log(clicked);
-    console.log(`${side}`);
-    let index = collection.indexOf(clicked)
-    console.log(index);
-    let result = collection.splice(index, 1)
-    console.log(result);
-    console.log(collection);
-    let removed = clicked;
-    this.props.onSwitchPlaylistCallback(removed, side);
-    this.setState({tracks: collection})
+    this.props.onSwitchPlaylistCallback(trackId, side);
   }
 
   calculatePlayTime (tracks) {

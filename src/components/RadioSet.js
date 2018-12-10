@@ -12,17 +12,16 @@ const RadioSet = (props) => {
     eveningTracks: props.tracks.slice(props.tracks.length / 2, props.tracks.length)
   };
 
-  const onSwitchPlaylist = (removed, side) => {
-    console.log(`From RadioSet result: ${removed}`)
-    console.log(removed);
-    console.log(side);
+  const onSwitchPlaylist = (trackId, side) => {
+    let removeFromCollection = side === "Morning" ? playlists.morningTracks : playlists.eveningTracks
     console.log(playlists.morningTracks);
     console.log(playlists.eveningTracks);
-    if (side === "Morning") {
-      playlists.eveningTracks.push(removed)
-    } else {
-      playlists.morningTracks.push(removed)
-    }
+    let clicked = removeFromCollection.find(track => track.id === trackId)
+    let index = removeFromCollection.indexOf(clicked)
+    console.log(index);
+    removeFromCollection.splice(index, 1)
+    let addToCollection = removeFromCollection === playlists.morningTracks ? playlists.eveningTracks : playlists.morningTracks
+    addToCollection.push(clicked)
     console.log(playlists.morningTracks);
     console.log(playlists.eveningTracks);
   }
