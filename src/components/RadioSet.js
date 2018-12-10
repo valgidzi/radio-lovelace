@@ -7,30 +7,36 @@ import Playlist from './Playlist';
 class RadioSet extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      tracks: this.props.tracks,
-      side: this.props.side
-    }
-  }
-  render() {
-    console.log(`Radio set for ${this.props.tracks.length} tracks`);
+
     const playlists = {
       morningTracks: this.props.tracks.slice(0, this.props.tracks.length / 2),
       eveningTracks: this.props.tracks.slice(this.props.tracks.length / 2, this.props.tracks.length)
     };
 
+    this.state = {
+      morning: playlists.morningTracks,
+      evening: playlists.eveningTracks
+    }
+  }
+  render() {
+    console.log(`Radio set for ${this.props.tracks.length} tracks`);
+
+
     const onSwitchPlaylist = (trackId, side) => {
-      let removeFromCollection = side === "Morning" ? playlists.morningTracks : playlists.eveningTracks
-      console.log(playlists.morningTracks);
-      console.log(playlists.eveningTracks);
+      let morning = this.state.morning
+      let evening = this.state.evening
+      let removeFromCollection = side === "Morning" ? morning : evening
+      console.log(morning);
+      console.log(evening);
       let clicked = removeFromCollection.find(track => track.id === trackId)
       let index = removeFromCollection.indexOf(clicked)
       console.log(index);
       removeFromCollection.splice(index, 1)
-      let addToCollection = removeFromCollection === playlists.morningTracks ? playlists.eveningTracks : playlists.morningTracks
+      let addToCollection = removeFromCollection === morning ? evening : morning
       addToCollection.push(clicked)
-      console.log(playlists.morningTracks);
-      console.log(playlists.eveningTracks);
+      console.log(morning);
+      console.log(evening);
+      this.setState({morning: morning, evening: evening})
     }
 
     return (
@@ -38,12 +44,12 @@ class RadioSet extends React.Component {
         <section className="radio-set--playlist-container">
           <Playlist
             side="Morning"
-            tracks={playlists.morningTracks}
+            tracks={this.state.morning}
             onSwitchPlaylistCallback={onSwitchPlaylist}
           />
           <Playlist
             side="Evening"
-            tracks={playlists.eveningTracks}
+            tracks={this.state.evening}
             onSwitchPlaylistCallback={onSwitchPlaylist}
           />
         </section>
