@@ -12,6 +12,12 @@ class Track extends React.Component {
     this.setState({favorite: !this.state.favorite})
   }
 
+  onTrackTopClick = () => {
+    console.log(`Clicked song in Track: ${this.props.id}`)
+    console.log(`this is: ${this}`)
+    this.props.moveTrackToTopCallback(this.props.id)
+  }
+
   render() {
     const {
       title,
@@ -32,7 +38,7 @@ class Track extends React.Component {
         <p className="track--artist">{artist}</p>
         <p className="track--playtime">{playtime}</p>
         <button
-          className="track--control track--to-top"
+          className="track--control track--to-top" onClick={this.onTrackTopClick}
           >
           <span role="img" aria-label="send to top">🔝</span>
         </button>
