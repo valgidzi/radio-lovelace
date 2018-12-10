@@ -25,17 +25,15 @@ class RadioSet extends React.Component {
     const onSwitchPlaylist = (trackId, side) => {
       let morning = this.state.morning
       let evening = this.state.evening
+
       let removeFromCollection = side === "Morning" ? morning : evening
-      console.log(morning);
-      console.log(evening);
       let clicked = removeFromCollection.find(track => track.id === trackId)
       let index = removeFromCollection.indexOf(clicked)
-      console.log(index);
       removeFromCollection.splice(index, 1)
+
       let addToCollection = removeFromCollection === morning ? evening : morning
-      addToCollection.push(clicked)
-      console.log(morning);
-      console.log(evening);
+      addToCollection.unshift(clicked)
+
       this.setState({morning: morning, evening: evening})
     }
 

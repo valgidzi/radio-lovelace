@@ -16,8 +16,10 @@ class Playlist extends React.Component {
     let collection = this.state.tracks
     let clicked = collection.find(track => track.id === trackId)
     let index = collection.indexOf(clicked)
+
     collection.splice(index, 1)
     collection.unshift(clicked)
+
     this.setState({tracks: collection});
   }
 

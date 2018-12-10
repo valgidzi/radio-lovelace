@@ -27,6 +27,7 @@ class Track extends React.Component {
       playtime,
       albumart
     } = this.props
+    
     return (
       <li className="track">
         <img className="track--albumart" alt={`album art for ${title}`} src={albumart} />
